@@ -1,0 +1,82 @@
+@use './typography' as *;
+
+/* ==================== Mobile Text Styles ==================== */
+
+// Mobile - H1 Header
+@mixin header-mobile {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+// Mobile - H2 Subheader
+@mixin subheader-mobile {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+// Mobile - H4 Paragraph
+@mixin paragraph-mobile {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+// Mobile - Labels
+@mixin label-mobile {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+/* ==================== Desktop & Tablet Text Styles ==================== */
+
+// Desktop & Tablet - H1 Hero Header
+@mixin hero-header-desktop {
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 700;
+}
+
+// Desktop & Tablet - H1 Header
+@mixin h1-header-desktop {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+}
+
+// Desktop & Tablet - H2 Header
+@mixin h2-header-desktop {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+// Desktop & Tablet - H3 Subheader
+@mixin subheader-desktop {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+// Desktop & Tablet - Paragraph
+@mixin paragraph-desktop {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+// Desktop & Tablet - List
+@mixin list-desktop {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}
+
+// Desktop & Tablet - Labels & Buttons
+@mixin label-desktop {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+}
