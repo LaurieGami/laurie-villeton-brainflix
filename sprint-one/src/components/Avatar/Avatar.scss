@@ -1,0 +1,14 @@
+/* =============== Avatar =============== */
+.avatar {
+    height: 100%;
+    width: auto;
+    
+    &-container {
+        width: 48px; // 48px for Desktop & Tablet
+        height: 48px; // 48px for Desktop & Tablet
+        border-radius: 50%;
+        overflow: hidden;
+        // background: colors.$secondary-grey;
+        display: flex;
+    }
+}

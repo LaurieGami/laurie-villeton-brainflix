@@ -1,4 +1,41 @@
 @use './typography' as *;
+@use './variables' as *;
+@use './colors';
+
+/* ==================== Button ==================== */
+@mixin button-mobile {
+    @include label-desktop;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    background: colors.$primary-blue;
+    color: colors.$primary-white;
+    border-style: none;
+    border-radius: 4px;
+    width: 100%;
+}
+
+@mixin button-desktop {
+padding: 0 32px;
+width: 150px;
+}
+
+@mixin button-hover {
+background: colors.$secondary-blue;
+}
+
+/* ==================== Form ==================== */
+
+@mixin form-input {
+    font-family: "Avenir", "Roboto", sans-serif;
+    padding: $padding*1.5;
+    border-radius: 4px;
+    border: 1px solid colors.$secondary-silver;
+    background: colors.$secondary-alabaster;
+    color: colors.$primary-black;
+}
 
 /* ==================== Mobile Text Styles ==================== */
 
@@ -28,6 +65,7 @@
     font-size: 12px;
     line-height: 20px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
 /* ==================== Desktop & Tablet Text Styles ==================== */
@@ -79,4 +117,5 @@
     font-size: 12px;
     line-height: 20px;
     font-weight: 600;
+    text-transform: uppercase;
 }
