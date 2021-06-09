@@ -1,0 +1,71 @@
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+@use '../../partials/colors';
+
+/* =============== Comment Item =============== */
+.comment {
+    border-bottom: $divider;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: $padding*2 0;
+
+    @media (min-width: 768px) {
+        padding: $padding*3 0;
+    }
+
+    &__left {
+        display: flex;
+        width: 18%;
+        
+        @media (min-width: 768px) {
+            width: 12%;
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+
+        @media (min-width: 768px) {
+            width: 88%;
+        }
+    }
+
+    &__name {
+        @include paragraph-mobile;
+        font-weight: 600;
+        display: flex;
+        width: 60%;
+        padding-bottom: $padding;
+
+        @media (min-width: 768px) {
+            @include paragraph-desktop;
+            font-weight: 600;
+        }
+    }
+
+    &__timestamp {
+        @include paragraph-mobile;
+        color: colors.$secondary-silver;
+        display: flex;
+        justify-content: flex-end;
+        width: 40%;
+        padding-bottom: $padding;
+
+        @media (min-width: 768px) {
+            @include paragraph-desktop;
+        }
+    }
+
+    &__text {
+        @include paragraph-mobile;
+        display: flex;
+        width: 100%;
+
+        @media (min-width: 768px) {
+            @include paragraph-desktop;
+        }
+    }
+}

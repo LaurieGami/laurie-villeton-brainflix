@@ -1,0 +1,46 @@
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+@use '../../partials/colors';
+
+/* =============== Comments =============== */
+.comments {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 $padding*2;
+
+    @media (min-width: 1280px) {
+        width: 60%;
+    }
+
+    &__count {
+        @include subheader-mobile;
+        align-self: flex-start;
+        margin-bottom: $padding*2;
+    }
+    
+    // Comment Form Container Style
+    &__form {
+        border-bottom: $divider;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: $padding*2;
+
+        @media (min-width: 768px) {
+            padding-bottom: $padding*3;
+        }
+    }
+
+    // Comment Container Style
+    &__container {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: $padding*2;
+
+        @media (min-width: 768px) {
+            padding-bottom: $padding*4.5;
+        }
+    }
+}
