@@ -6,11 +6,24 @@
     display: flex;
     flex-direction: column;
 
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: $padding*2 $padding*3;
+    }
+
     &__logo {
         width: 100%;
         display: flex;
+        align-items: center;
         justify-content: center;
-        padding-bottom: $padding;
+        padding-bottom: $padding*2;
+
+        @media (min-width: 768px) {
+            width: 20%;
+            justify-content: flex-start;
+            padding-bottom: 0;
+        }
     }
 
     &__content {
@@ -18,5 +31,11 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+
+        @media (min-width: 768px) {
+            width: 80%;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+        }
     }
 }

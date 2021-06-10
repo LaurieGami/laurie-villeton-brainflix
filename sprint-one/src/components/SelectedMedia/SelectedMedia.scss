@@ -2,7 +2,7 @@
 @use '../../partials/mixins' as *;
 @use '../../partials/colors';
 
-.media {
+.main-media {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -12,7 +12,10 @@
 
     }
 
-    &__video {}
+    &__video {
+        width: 100%;
+        height: auto;
+    }
 
     &__info {
         padding: $padding*2;

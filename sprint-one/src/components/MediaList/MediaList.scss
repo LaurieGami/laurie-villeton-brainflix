@@ -1,0 +1,59 @@
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+
+.media-list {
+    padding: $padding*2;
+
+    &__label {
+        @include label-mobile;
+        padding-bottom: $padding*2;
+    }
+}
+
+.media {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: $padding*3;
+
+    &__left {
+        padding-right: $padding*2; 
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        @include subheader-mobile;
+        margin-bottom: $padding/2;
+        max-height: 44px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        // white-space: nowrap;
+    }
+
+    &__channel {
+        @include paragraph-mobile;
+        width: 100%;
+    }
+}
+
+/* =============== Cover =============== */
+.cover {
+    width: 100%;
+    height: auto;
+    
+    &-container {
+        width: 120px; // same size for Mobile, Tablet & Desktop
+        height: 70px; // same size for Mobile, Tablet & Desktop
+        border-radius: 4px;
+        overflow: hidden;
+        // background: colors.$secondary-grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

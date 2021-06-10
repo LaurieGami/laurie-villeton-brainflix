@@ -1,23 +1,26 @@
 import './CommentForm.scss';
+import React from 'react';
 import Avatar from "../Avatar/Avatar";
 
-function CommentForm() {
-    return (
-        <form id="comment-form" className="form" novalidate>
-            <div className="form__personal-info">
-                <div className="form__avatar">
-                    <Avatar />
+class CommentForm extends React.Component {
+    render () {
+        return (
+            <form id="comment-form" className="form">
+                <div className="form__personal-info">
+                    <div className="form__avatar">
+                        <Avatar />
+                    </div>
                 </div>
-            </div>
-            <div className="form__container">
-                <div className="form__comment">
-                    <label for="comment" className="form__label">Join the conversation</label>
-                    <textarea id="comment" name="comment" className="form__textarea" placeholder="Write comment here"></textarea>
+                <div className="form__container">
+                    <div className="form__comment">
+                        <label htmlFor="comment" className="form__label">Join the conversation</label>
+                        <textarea id="comment" name="comment" className="form__textarea" placeholder="Write comment here"></textarea>
+                    </div>
+                    <button type="submit" id="comment-btn" className="form__btn">Comment</button>
                 </div>
-                <button type="submit" id="comment-btn" className="form__btn">Comment</button>
-            </div>
-        </form>
-    )
+            </form>
+        )
+    }
 }
 
 export default CommentForm;

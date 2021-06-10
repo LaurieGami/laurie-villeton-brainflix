@@ -9,6 +9,12 @@
     display: flex;
     margin-bottom: $padding;
 
+    @media (min-width: 768px) {
+        width: 250px;
+        margin-bottom: 0;
+        margin-right: $padding*3;
+    }
+
     &__icon {
         margin-right: $padding;
     }

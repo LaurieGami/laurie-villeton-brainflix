@@ -7,10 +7,8 @@ import Avatar from '../Avatar/Avatar';
 function Header() {
     return (
         <header className="header">
-            <section className="header__logo">
-                <a className="header__logo-link" href="">
-                    <img className="header__logo" src={logo} />
-                </a>
+            <section className="header__logo" href="">
+                <img className="header__logo-img" src={logo} alt="BrainFlix Logo"/>
             </section>
             <section className="header__content">
                 <SearchBar />

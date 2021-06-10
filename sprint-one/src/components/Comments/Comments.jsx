@@ -1,24 +1,24 @@
 import './Comments.scss';
+import React from 'react';
 import CommentForm from '../CommentForm/CommentForm';
-import CommentItem from '../CommentItem/CommentItem';
+import CommentItems from '../CommentItems/CommentItems';
 
-function Comments() {
-    return (
-        <section className="comments">
-            <h2 className="comments__count">3 Comments</h2>
-            <section className="comments__form">
-                <CommentForm />
+class Comments extends React.Component {
+    render () {
+        return (
+            <section className="comments">
+                <h2 className="comments__count">{this.props.comments.length} Comments</h2>
+                <section className="comments__form">
+                    <CommentForm />
+                </section>
+                {/* <!-- =============== Comment Container =============== --> */}
+                <section id="comment-container" className="comments__container">
+                    {/* <!-- This is where the comments will appear --> */}
+                    <CommentItems comment={this.props.comments} />
+                </section>
             </section>
-            {/* <!-- =============== Comment Container =============== --> */}
-            <section id="comment-container" className="comments__container">
-                {/* <!-- This is where the comments will appear --> */}
-                <CommentItem />
-                <CommentItem />
-                <CommentItem />
-            </section>
-        </section>
-
-    )
+        )
+    }
 }
 
 export default Comments;
