@@ -1,4 +1,4 @@
-import './SelectedMedia.scss';
+import './SelectedMediaInfo.scss';
 import React from 'react';
 import viewsIcon from '../../assets/icons/Icon-views.svg';
 import likesIcon from '../../assets/icons/Icon-likes.svg';
@@ -48,39 +48,33 @@ const timestampToDate = (timestamp) => {
     return date = mm+'/'+dd+'/'+yyyy;
 }
 
-class SelectedMedia extends React.Component {
+class SelectedMediaInfo extends React.Component {
     render () {
         return (
-            <article className="main-media">
-                <section className="main-media__hero">
-                    <video className="main-media__video" controls poster={this.props.entry.image}>
-                        <source src={this.props.entry.video} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                </section>
-                <section className="main-media__info">
-                    <h1 className="main-media__title">{this.props.entry.title}</h1>
-                    <div className="main-media__subtitles">
-                        <div className="main-media__top">
-                            <h2 className="main-media__channel">By {this.props.entry.channel}</h2>
-                            <p className="main-media__timestamp">{timeAgo(this.props.entry.timestamp)}</p>
+            <article className="selected-media">
+                <section className="selected-media__info">
+                    <h1 className="selected-media__title">{this.props.entry.title}</h1>
+                    <div className="selected-media__subtitles">
+                        <div className="selected-media__top">
+                            <h2 className="selected-media__channel">By {this.props.entry.channel}</h2>
+                            <p className="selected-media__timestamp">{timeAgo(this.props.entry.timestamp)}</p>
                         </div>
-                        <div className="main-media__bottom">
-                            <div className="main-media__stats">
-                                <img className="main-media__icon" src={viewsIcon} alt="Views Icon"/>
-                                <p className="main-media__number">{this.props.entry.views}</p>
+                        <div className="selected-media__bottom">
+                            <div className="selected-media__stats">
+                                <img className="selected-media__icon" src={viewsIcon} alt="Views Icon"/>
+                                <p className="selected-media__number">{this.props.entry.views}</p>
                             </div>
-                            <div className="main-media__stats">
-                                <img className="main-media__icon" src={likesIcon} alt="Likes Icon"/>
-                                <p className="main-media__number">{this.props.entry.likes}</p>
+                            <div className="selected-media__stats">
+                                <img className="selected-media__icon" src={likesIcon} alt="Likes Icon"/>
+                                <p className="selected-media__number">{this.props.entry.likes}</p>
                             </div>
                         </div>
                     </div>
-                    <p className="main-media__description">
+                    <p className="selected-media__description">
                         {this.props.entry.description}
                     </p>
                 </section>
-                <section className="main-media__comments">
+                <section className="selected-media__comments">
                     <Comments comments={this.props.entry.comments}/>
                 </section>
             </article>
@@ -88,4 +82,4 @@ class SelectedMedia extends React.Component {
     }
 }
 
-export default SelectedMedia;
+export default SelectedMediaInfo;
