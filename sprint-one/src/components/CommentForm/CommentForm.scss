@@ -11,6 +11,10 @@
     &__personal-info {
         display: flex;
         width: 18%;
+
+        @media (min-width: 768px) {
+            width: 9%;
+        }
     }
 
     &__avatar {
@@ -24,16 +28,23 @@
         flex-direction: column;
         align-items: flex-end;
         width: 78%;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            width: 91%;
+        }
     }
 
     &__comment {
         display: flex;
         flex-direction: column;
         width: 100%;
-        padding-bottom: $padding*2;
+        margin-bottom: $padding*2;
 
         @media (min-width: 768px) {
-            padding-bottom: $padding*3;
+            margin-bottom: 0;
+            margin-right: $padding*2;
+            width: 100%;
         }
     }
 
@@ -55,6 +66,7 @@
 
         @media (min-width: 768px) {
             @include paragraph-desktop;
+            height: 48px;
         }
 
         &::placeholder {
@@ -76,6 +88,7 @@
 
         @media (min-width: 768px) {
             @include button-desktop;
+            margin-right: $padding*5;
         }
 
         &:hover {

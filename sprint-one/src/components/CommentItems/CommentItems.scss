@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: $padding*2 0;
+    padding: $padding*3 0;
 
     @media (min-width: 768px) {
         padding: $padding*3 0;
@@ -19,7 +19,7 @@
         width: 18%;
         
         @media (min-width: 768px) {
-            width: 12%;
+            width: 9%;
         }
     }
 
@@ -29,7 +29,7 @@
         width: 80%;
 
         @media (min-width: 768px) {
-            width: 88%;
+            width: 91%;
         }
     }
 
@@ -43,6 +43,8 @@
         @media (min-width: 768px) {
             @include paragraph-desktop;
             font-weight: 600;
+            width: auto;
+            margin-right: $padding*2;
         }
     }
 
@@ -56,6 +58,7 @@
 
         @media (min-width: 768px) {
             @include paragraph-desktop;
+            width: auto;
         }
     }
 
@@ -66,6 +69,7 @@
 
         @media (min-width: 768px) {
             @include paragraph-desktop;
+            margin-right: $padding*5;
         }
     }
 }

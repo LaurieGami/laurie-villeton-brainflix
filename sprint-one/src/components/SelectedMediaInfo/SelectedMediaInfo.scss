@@ -5,10 +5,11 @@
 .selected-media {
     width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
 
-    @media (min-width: 1080px) {
+    @media (min-width: 1440px) {
         width: 66%;
+        border-right: $divider;
     }
 
     &__info {
@@ -20,8 +21,9 @@
             padding: $padding*3;
         }
 
-        @media (min-width: 1080px) {
+        @media (min-width: 1440px) {
             padding: $padding*3 0;
+
         }
     }
 
@@ -84,7 +86,7 @@
         align-items: center;
         margin-right: $padding*3;
 
-        @media (min-width: 1080px) {
+        @media (min-width: 1440px) {
             margin-right: $padding*4;
         }
     }
@@ -111,5 +113,9 @@
             width: 73%;
             margin-top: $padding*5;
         }
+    }
+
+    &__comments {
+        width: 100%;
     }
 }

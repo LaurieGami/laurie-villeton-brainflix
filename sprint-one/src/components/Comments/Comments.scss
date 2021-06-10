@@ -8,16 +8,28 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 $padding*2;
+    padding: $padding*2;
 
-    @media (min-width: 1280px) {
-        width: 60%;
+    @media (min-width: 768px) {
+        padding: $padding*3;
     }
+
+    @media (min-width: 1440px) {
+        padding: $padding*3 0;
+    }
+
+    // @media (min-width: 1440px) {
+    //     width: 60%;
+    // }
 
     &__count {
         @include subheader-mobile;
         align-self: flex-start;
-        margin-bottom: $padding*2;
+        margin: $padding 0;
+
+        @media (min-width: 768px) {
+            @include subheader-desktop;
+        }
     }
     
     // Comment Form Container Style
@@ -26,21 +38,13 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-        padding-bottom: $padding*2;
-
-        @media (min-width: 768px) {
-            padding-bottom: $padding*3;
-        }
+        padding: $padding*3 0;
     }
 
     // Comment Container Style
     &__container {
+        width: 100%;
         display: flex;
         flex-direction: column;
-        padding-bottom: $padding*2;
-
-        @media (min-width: 768px) {
-            padding-bottom: $padding*4.5;
-        }
     }
 }
