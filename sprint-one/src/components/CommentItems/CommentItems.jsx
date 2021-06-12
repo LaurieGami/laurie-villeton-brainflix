@@ -1,5 +1,4 @@
 import './CommentItems.scss';
-import React from 'react';
 import Avatar from '../Avatar/Avatar';
 
 // Calculate how long ago was the comment posted
@@ -46,27 +45,26 @@ const timestampToDate = (timestamp) => {
     return date = mm+'/'+dd+'/'+yyyy;
 }
 
-class CommentItems extends React.Component {
-    render () {
-        return (
-            <>
-            {this.props.comment.map(entry => {
-                return (
-                    <article className="comment" key={entry.id}>
-                        <div className="comment__left">
-                            <Avatar />
-                        </div>
-                        <div className="comment__right">
-                            <h3 className="comment__name">{entry.name}</h3>
-                            <p className="comment__timestamp">{timeAgo(entry.timestamp)}</p>
-                            <p className="comment__text">{entry.comment}</p>
-                        </div>
-                    </article>    
-                )
-            })}
-            </>
-        )
-    }
+function CommentItems ({comments}) {
+    return (
+        <>
+        {comments.map(comment => {
+            return (
+                <article className="comment" key={comment.id}>
+                    <div className="comment__left">
+                        <Avatar />
+                    </div>
+                    <div className="comment__right">
+                        <h3 className="comment__name">{comment.name}</h3>
+                        <p className="comment__timestamp">{timeAgo(comment.timestamp)}</p>
+                        <p className="comment__text">{comment.comment}</p>
+                    </div>
+                </article>    
+            )
+        })}
+        </>
+    )
+
 }
 
 export default CommentItems;

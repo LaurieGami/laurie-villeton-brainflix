@@ -44,19 +44,13 @@
         @media (min-width: 768px) {
             margin-bottom: 0;
             margin-right: $padding*2;
-            width: 100%;
         }
     }
 
     &__label {
-        @include label-mobile;
+        @include label;
         color: colors.$secondary-silver;
-        margin-bottom: $padding/2;
-
-        @media (min-width: 768px) {
-            @include label-desktop;
-        }
-        
+        margin-bottom: $padding/2;     
     }
 
     &__textarea {

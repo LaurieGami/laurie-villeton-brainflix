@@ -1,5 +1,4 @@
 import './SelectedMediaInfo.scss';
-import React from 'react';
 import viewsIcon from '../../assets/icons/Icon-views.svg';
 import likesIcon from '../../assets/icons/Icon-likes.svg';
 import Comments from "../Comments/Comments";
@@ -48,38 +47,36 @@ const timestampToDate = (timestamp) => {
     return date = mm+'/'+dd+'/'+yyyy;
 }
 
-class SelectedMediaInfo extends React.Component {
-    render () {
-        return (
-            <article className="selected-media">
-                <section className="selected-media__info">
-                    <h1 className="selected-media__title">{this.props.entry.title}</h1>
-                    <div className="selected-media__subtitles">
-                        <div className="selected-media__top">
-                            <h2 className="selected-media__channel">By {this.props.entry.channel}</h2>
-                            <p className="selected-media__timestamp">{timeAgo(this.props.entry.timestamp)}</p>
+function SelectedMediaInfo ({selectedEntry}) {
+    return (
+        <article className="selected-media">
+            <section className="selected-media__info">
+                <h1 className="selected-media__title">{selectedEntry.title}</h1>
+                <div className="selected-media__subtitles">
+                    <div className="selected-media__top">
+                        <h2 className="selected-media__channel">By {selectedEntry.channel}</h2>
+                        <p className="selected-media__timestamp">{timeAgo(selectedEntry.timestamp)}</p>
+                    </div>
+                    <div className="selected-media__bottom">
+                        <div className="selected-media__stats">
+                            <img className="selected-media__icon" src={viewsIcon} alt="Views Icon"/>
+                            <p className="selected-media__number">{selectedEntry.views}</p>
                         </div>
-                        <div className="selected-media__bottom">
-                            <div className="selected-media__stats">
-                                <img className="selected-media__icon" src={viewsIcon} alt="Views Icon"/>
-                                <p className="selected-media__number">{this.props.entry.views}</p>
-                            </div>
-                            <div className="selected-media__stats">
-                                <img className="selected-media__icon" src={likesIcon} alt="Likes Icon"/>
-                                <p className="selected-media__number">{this.props.entry.likes}</p>
-                            </div>
+                        <div className="selected-media__stats">
+                            <img className="selected-media__icon" src={likesIcon} alt="Likes Icon"/>
+                            <p className="selected-media__number">{selectedEntry.likes}</p>
                         </div>
                     </div>
-                    <p className="selected-media__description">
-                        {this.props.entry.description}
-                    </p>
-                </section>
-                <section className="selected-media__comments">
-                    <Comments comments={this.props.entry.comments}/>
-                </section>
-            </article>
-        )
-    }
+                </div>
+                <p className="selected-media__description">
+                    {selectedEntry.description}
+                </p>
+            </section>
+            <section className="selected-media__comments">
+                <Comments comments={selectedEntry.comments}/>
+            </section>
+        </article>
+    )
 }
 
 export default SelectedMediaInfo;

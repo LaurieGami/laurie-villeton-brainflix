@@ -5,8 +5,12 @@
     align-items: center;
 
     &__container {
-        @media (min-width: 1440px) {
+        display: flex;
+        flex-direction: column;
+        
+        @media (min-width: 1280px) {
             width: 1080px;
+            flex-direction: row;
         }
     }
 }

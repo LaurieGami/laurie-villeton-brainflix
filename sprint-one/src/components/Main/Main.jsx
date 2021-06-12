@@ -21,9 +21,9 @@ class Main extends React.Component {
     render () {
         return (
             <main className="main">
-                <Hero entry={this.state.selectedEntry} />
+                <Hero selectedEntry={this.state.selectedEntry} />
                 <section className="main__container">
-                    <SelectedMediaInfo entry={this.state.selectedEntry} />
+                    <SelectedMediaInfo selectedEntry={this.state.selectedEntry} />
                     <MediaList entries={this.state.videos.filter(video => video.id !== this.state.selectedEntry.id)} clickHandler={this.clickHandler} />
                 </section>            
             </main>

@@ -4,7 +4,7 @@
 
 /* ==================== Button ==================== */
 @mixin button-mobile {
-    @include label-desktop;
+    @include label;
     padding: 0;
     display: flex;
     justify-content: center;
@@ -61,7 +61,7 @@ background: colors.$secondary-blue;
 }
 
 // Mobile - Labels
-@mixin label-mobile {
+@mixin label {
     font-size: 12px;
     line-height: 20px;
     font-weight: 600;
@@ -114,10 +114,4 @@ background: colors.$secondary-blue;
 }
 
 // Desktop & Tablet - Labels & Buttons
-@mixin label-desktop {
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: colors.$secondary-silver;
-}
+// Same as mobile
