@@ -52,7 +52,10 @@ function CommentItems ({comments}) {
             return (
                 <article className="comment" key={comment.id}>
                     <div className="comment__left">
-                        <Avatar />
+                        {/* Insert Avatar Component instead of code below for next sprint */}
+                        <div className="avatar-container">
+                            {/* <img src={avatar} className="avatar" alt="Avatar"/> */}
+                        </div>
                     </div>
                     <div className="comment__right">
                         <h3 className="comment__name">{comment.name}</h3>

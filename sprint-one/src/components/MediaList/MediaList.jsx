@@ -1,13 +1,13 @@
 import './MediaList.scss';
 
-function MediaList ({entries}) {
+function MediaList ({entries, handleClick}) {
     return (
         <article className="media-list">
             <h5 className="media-list__label">Next Video</h5>
             <section className="media-list__container">
                 {entries.map(entry => {
                     return (
-                        <section className="media" key={entry.id} onClick={() => this.props.clickHandler(entry.id)}>
+                        <section className="media" key={entry.id} onClick={() => handleClick(entry.id)}>
                             <div className="media__left">
                                 <div className="media__img-container">
                                     <img src={entry.image} className="media__img" alt="Cover"/>

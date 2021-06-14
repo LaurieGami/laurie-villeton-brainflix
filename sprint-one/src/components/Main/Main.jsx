@@ -13,7 +13,7 @@ class Main extends React.Component {
         selectedEntry: videoDetails[0]
     }
 
-    clickHandler = (id) => {
+    handleClick = (id) => {
         const individualEntry = this.state.videoDetails.find(entry => entry.id === id);
         this.setState({selectedEntry: individualEntry});
     };
@@ -24,7 +24,7 @@ class Main extends React.Component {
                 <Hero selectedEntry={this.state.selectedEntry} />
                 <section className="main__container">
                     <SelectedMediaInfo selectedEntry={this.state.selectedEntry} />
-                    <MediaList entries={this.state.videos.filter(video => video.id !== this.state.selectedEntry.id)} clickHandler={this.clickHandler} />
+                    <MediaList entries={this.state.videos.filter(video => video.id !== this.state.selectedEntry.id)} handleClick={this.handleClick} />
                 </section>            
             </main>
         )

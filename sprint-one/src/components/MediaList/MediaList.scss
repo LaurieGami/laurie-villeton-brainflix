@@ -60,16 +60,25 @@
     }
 
     &__title {
-        @include paragraph-mobile;
-        font-weight: 600;
-        margin-bottom: $padding; // supposed to be 16px
-        max-height: 36px;
+        @include subheader-mobile;
+        margin-bottom: $padding;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;  
         overflow: hidden;
         text-overflow: ellipsis;
-        // white-space: nowrap;
+
+        @media (min-width: 768px) {
+            @include list-desktop;
+            font-weight: 600;
+        }
     }
 
     &__channel {
         @include paragraph-mobile;
+
+        @media (min-width: 768px) {
+            @include list-desktop;
+        }
     }
 }

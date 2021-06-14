@@ -41,7 +41,7 @@
         padding-bottom: $padding;
 
         @media (min-width: 768px) {
-            @include paragraph-desktop;
+            @include list-desktop;
             font-weight: 600;
             width: auto;
             margin-right: $padding*2;
@@ -57,7 +57,7 @@
         padding-bottom: $padding;
 
         @media (min-width: 768px) {
-            @include paragraph-desktop;
+            @include list-desktop;
             width: auto;
         }
     }

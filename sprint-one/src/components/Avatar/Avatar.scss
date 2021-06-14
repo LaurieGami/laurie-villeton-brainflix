@@ -2,7 +2,7 @@
 
 /* =============== Avatar =============== */
 .avatar {
-    height: 100%;
+    min-height: 100%;
     width: auto;
     
     &-container {
@@ -10,7 +10,7 @@
         height: 48px; // 48px for Mobile, Desktop & Tablet
         border-radius: 50%;
         overflow: hidden;
-        background: colors.$secondary-silver;
+        background: colors.$secondary-mercury;
         display: flex;
     }
 }
