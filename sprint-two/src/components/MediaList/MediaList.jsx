@@ -8,7 +8,7 @@ function MediaList ({entries}) {
             <section className="media-list__container">
                 {entries.map(entry => {
                     return (
-                        <Link to={`/${entry.id}`} key={entry.id} className="media-link">
+                        <Link to={`/videos/${entry.id}`} key={entry.id} className="media-link">
                             <section className="media">
                                 <div className="media__left">
                                     <div className="media__img-container">
