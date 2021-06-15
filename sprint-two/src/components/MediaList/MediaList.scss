@@ -1,0 +1,90 @@
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+@use '../../partials/colors';
+
+.media-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: $padding*2;
+
+    @media (min-width: 768px) {
+        width: 45%;
+        padding: $padding $padding*3 $padding*3;
+    }
+
+    @media (min-width: 1280px) {
+        width: 34%;
+        padding: $padding*4 0 0 $padding*3;
+    }
+
+    &__label {
+        @include label;
+        margin: $padding 0;
+    }
+
+    &__container {
+        padding-top: $padding;
+    }
+}
+
+.media {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: $padding*3;
+
+    &-link {
+        text-decoration: none;
+        color: colors.$primary-black;
+    }
+
+    &__left {
+        max-height: 70px;
+        margin-right: $padding*2;
+    }
+
+    &__right {
+        max-height: 70px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__img {
+        min-width:100%;
+        min-height:100%;
+        
+        &-container {
+            width: 120px; // same size for Mobile, Tablet & Desktop
+            height: 70px; // same size for Mobile, Tablet & Desktop
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    &__title {
+        @include subheader-mobile;
+        margin-bottom: $padding;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+        @media (min-width: 768px) {
+            @include list-desktop;
+            font-weight: 600;
+        }
+    }
+
+    &__channel {
+        @include paragraph-mobile;
+
+        @media (min-width: 768px) {
+            @include list-desktop;
+        }
+    }
+}

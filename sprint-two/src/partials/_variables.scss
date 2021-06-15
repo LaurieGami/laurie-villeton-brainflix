@@ -1,0 +1,14 @@
+@use './typography' as *;
+@use './colors';
+
+/* ==================== Main Font Family ==================== */
+$font-family: "Avenir", "Roboto", sans-serif;
+
+/* ==================== Main Font Color ==================== */
+$font-color: colors.$primary-black;
+
+/* ==================== Padding ==================== */
+$padding: 8px;
+
+/* ==================== Divider ==================== */
+$divider: 1px solid colors.$secondary-mercury;

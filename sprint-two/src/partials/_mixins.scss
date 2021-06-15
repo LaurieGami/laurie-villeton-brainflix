@@ -1,0 +1,121 @@
+@use './typography' as *;
+@use './variables' as *;
+@use './colors';
+
+/* ==================== List ==================== */
+@mixin list-style-reset {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ==================== Button ==================== */
+@mixin button-mobile {
+    @include label;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    background: colors.$primary-blue;
+    color: colors.$primary-white;
+    border-style: none;
+    border-radius: 4px;
+    width: 100%;
+}
+
+@mixin button-desktop {
+padding: 0 32px;
+width: 160px;
+}
+
+@mixin button-hover {
+background: colors.$secondary-blue;
+}
+
+/* ==================== Form ==================== */
+
+@mixin form-input {
+    font-family: "Avenir", "Roboto", sans-serif;
+    padding: $padding*1.5;
+    border-radius: 4px;
+    border: 1px solid colors.$secondary-mercury;
+    background: colors.$secondary-alabaster;
+    color: colors.$primary-black;
+}
+
+/* ==================== Mobile Text Styles ==================== */
+
+// Mobile - H1 Header
+@mixin header-mobile {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+// Mobile - H2 Subheader
+@mixin subheader-mobile {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+// Mobile - H4 Paragraph
+@mixin paragraph-mobile {
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+// Mobile, Tablet & Desktop - Labels
+@mixin label {
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: colors.$secondary-silver;
+}
+
+/* ==================== Desktop & Tablet Text Styles ==================== */
+
+// Desktop & Tablet - H1 Hero Header
+@mixin hero-header-desktop {
+    font-size: 60px;
+    line-height: 68px;
+    font-weight: 700;
+}
+
+// Desktop & Tablet - H1 Header
+@mixin h1-header-desktop {
+    font-size: 36px;
+    line-height: 44px;
+    font-weight: 700;
+}
+
+// Desktop & Tablet - H2 Header
+@mixin h2-header-desktop {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 700;
+}
+
+// Desktop & Tablet - H3 Subheader
+@mixin subheader-desktop {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+// Desktop & Tablet - Paragraph
+@mixin paragraph-desktop {
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+}
+
+// Desktop & Tablet - List
+@mixin list-desktop {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+}

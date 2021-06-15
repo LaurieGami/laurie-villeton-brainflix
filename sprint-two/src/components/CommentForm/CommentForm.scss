@@ -1,0 +1,91 @@
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+@use '../../partials/colors';
+
+/* =============== Comment Form =============== */
+.form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    &__personal-info {
+        display: flex;
+        width: 18%;
+
+        @media (min-width: 768px) {
+            width: 9%;
+        }
+    }
+
+    &__avatar {
+        display: flex;
+        width: 100%;
+        padding-top: $padding*3;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 78%;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            width: 91%;
+        }
+    }
+
+    &__comment {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: $padding*2;
+
+        @media (min-width: 768px) {
+            margin-bottom: 0;
+            margin-right: $padding*2;
+        }
+    }
+
+    &__label {
+        @include label;
+        margin-bottom: $padding/2;     
+    }
+
+    &__textarea {
+        @include paragraph-mobile;
+        @include form-input;
+        height: 100px;
+
+        @media (min-width: 768px) {
+            @include paragraph-desktop;
+            height: 48px;
+        }
+
+        &::placeholder {
+            color: colors.$primary-black;
+        }
+        
+        &:focus {
+            outline: none;
+            border: 2px solid colors.$primary-blue;
+        }
+
+        &:invalid {
+            // border: 1px solid colors.$error-red;
+        }
+    }
+
+    &__btn {
+        @include button-mobile;
+
+        @media (min-width: 768px) {
+            @include button-desktop;
+            margin-right: $padding*5;
+        }
+
+        &:hover {
+            @include button-hover;
+        }
+    }
+}

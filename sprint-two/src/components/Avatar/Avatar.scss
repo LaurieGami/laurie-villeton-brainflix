@@ -1,0 +1,16 @@
+@use '../../partials/colors';
+
+/* =============== Avatar =============== */
+.avatar {
+    min-height: 100%;
+    width: auto;
+    
+    &-container {
+        width: 48px; // 48px for Mobile, Desktop & Tablet
+        height: 48px; // 48px for Mobile, Desktop & Tablet
+        border-radius: 50%;
+        overflow: hidden;
+        background: colors.$secondary-mercury;
+        display: flex;
+    }
+}
