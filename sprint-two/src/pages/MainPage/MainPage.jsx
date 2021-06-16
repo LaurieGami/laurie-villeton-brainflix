@@ -1,10 +1,10 @@
-import './Main.scss';
+import './MainPage.scss';
 
-import Hero from '../Hero/Hero';
-import SelectedMediaInfo from '../SelectedMediaInfo/SelectedMediaInfo';
-import MediaList from '../MediaList/MediaList';
+import Hero from '../../components/Hero/Hero';
+import SelectedMediaInfo from '../../components/SelectedMediaInfo/SelectedMediaInfo';
+import MediaList from '../../components/MediaList/MediaList';
 
-const Main = ({videos, videoDetails, match, defaultVideoId}) => {
+const MainPage = ({videos, videoDetails, match, defaultVideoId}) => {
     let videoId;
     !!defaultVideoId ? videoId = defaultVideoId : videoId = match.params.videoId;
     const selectedVideo = videoDetails.find(video => video.id === videoId);
@@ -20,4 +20,4 @@ const Main = ({videos, videoDetails, match, defaultVideoId}) => {
     )
 }
 
-export default Main;
+export default MainPage;

@@ -1,9 +1,9 @@
 import './Comments.scss';
-import React from 'react';
+import { Component } from 'react';
 import CommentForm from '../CommentForm/CommentForm';
 import CommentItems from '../CommentItems/CommentItems';
 
-class Comments extends React.Component {
+class Comments extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();

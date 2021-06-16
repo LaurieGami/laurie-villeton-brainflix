@@ -1,8 +1,8 @@
-import './VideoUpload.scss';
+import './VideoUploadPage.scss';
 import { Link } from 'react-router-dom';
 import thumbnail from '../../assets/images/Upload-video-preview.jpg';
 
-const VideoUpload = () => {
+const VideoUploadPage = () => {
     return (
         <article className="upload-video">
             <h1 className="upload-video__title">Upload Video</h1>
@@ -32,4 +32,4 @@ const VideoUpload = () => {
     );
 }
 
-export default VideoUpload;
+export default VideoUploadPage;

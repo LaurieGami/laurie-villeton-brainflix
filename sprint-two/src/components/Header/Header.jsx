@@ -20,7 +20,7 @@ function Header() {
                     <SearchBar />
                 </li>
                 <li className="header__upload">
-                    <Link to="/VideoUpload" className="header__upload-link">
+                    <Link to="/videoupload" className="header__upload-link">
                         <UploadBtn />
                     </Link>
                 </li>
