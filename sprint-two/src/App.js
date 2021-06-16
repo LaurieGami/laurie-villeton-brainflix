@@ -13,8 +13,7 @@ import VideoUpload from './components/VideoUpload';
 class App extends Component {
   state = {
     videos: videos,
-    videoDetails: videoDetails,
-    // selectedEntry: videoDetails[0]
+    videoDetails: videoDetails
   }
 
   render () {
@@ -26,7 +25,7 @@ class App extends Component {
             return <Main 
                       videos={this.state.videos} 
                       videoDetails={this.state.videoDetails}
-                      defaultVideoId={this.state.videoDetails[0].id}
+                      defaultVideoId={this.state.videos[0].id}
                       {...routeProps}
                     />
           }} 

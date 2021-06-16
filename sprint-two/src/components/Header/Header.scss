@@ -6,6 +6,7 @@
     padding: $padding*2;
     display: flex;
     flex-direction: column;
+    border-bottom: $divider;
 
     @media (min-width: 768px) {
         flex-direction: row;
