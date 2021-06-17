@@ -12,7 +12,7 @@ function MediaList ({entries}) {
                             <section className="media">
                                 <div className="media__left">
                                     <div className="media__img-container">
-                                        <img src={entry.image} className="media__img" alt="Cover"/>
+                                        <img src={entry.image} className="media__img" alt={entry.title}/>
                                     </div>
                                 </div>
                                 <div className="media__right">

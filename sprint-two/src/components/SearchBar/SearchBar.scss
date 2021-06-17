@@ -1,6 +1,6 @@
-@use '../../partials/mixins' as *;
-@use '../../partials/variables' as *;
-@use '../../partials/colors';
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/colors';
 
 .searchbar {
     @include form-input;

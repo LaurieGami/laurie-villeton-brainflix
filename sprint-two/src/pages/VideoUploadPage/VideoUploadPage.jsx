@@ -12,7 +12,7 @@ const VideoUploadPage = () => {
                         <label htmlFor="videoThumbnail" className="upload-form__label">Video thumbnail</label>
                         {/* img and div to be replaced by a file input tag */}
                         <div className="upload-form__input-img-container">
-                            <img src={thumbnail} className="upload-form__input-img" />
+                            <img src={thumbnail} className="upload-form__input-img" alt="Video Upload Thumbnail" />
                         </div>
                     </div>
                     <div className="upload-form__info">
