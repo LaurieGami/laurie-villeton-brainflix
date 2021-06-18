@@ -45,24 +45,12 @@ class MainPage extends Component {
         this.getVideos();
     }
 
-    componentDidUpdate(prevProps) {
-        // Solution A - Is jumping and keeps running on both Pages
-        // const { videoId } = this.props.match.params;
-
-        // let myVideoId;
-        // !!videoId ? myVideoId = videoId : myVideoId = this.state.videos[0].id;
-
-        // this.getVideoDetails(myVideoId);
-
-        // console.log(myVideoId);
-
-        // Solution B - Keeps running when on the Home Page: watch the console.log(this.state.selectedVideoId);
+    componentDidUpdate(_prevProps, prevState) {
         const videoId = this.props.match.params.videoId || this.state.videos[0].id;
 
-        if (videoId !== prevProps.match.params.videoId || videoId !== this.state.selectedVideoId) {
-            // console.log(this.state.selectedVideoId);
-            this.getVideoDetails(videoId);
-        }       
+        if (prevState.selectedVideoId !== videoId) {
+            return this.getVideoDetails(videoId);
+        }
     }
     
     render() {
