@@ -10,16 +10,18 @@ class Comments extends Component {
     }
 
     render () {
+        const { selectedEntry } = this.props;
+        const { comments } = selectedEntry;
         return (
             <section className="comments">
-                <h2 className="comments__count">{this.props.comments.length} Comments</h2>
+                <h2 className="comments__count">{comments.length} Comments</h2>
                 <section className="comments__form">
-                    <CommentForm handleSubmit={this.handleSubmit}/>
+                    <CommentForm selectedEntry={selectedEntry} handleSubmit={this.handleSubmit}/>
                 </section>
                 {/* <!-- =============== Comment Container =============== --> */}
                 <section id="comment-container" className="comments__container">
                     {/* <!-- This is where the comments will appear --> */}
-                    <CommentItems comments={this.props.comments} />
+                    <CommentItems comments={comments} />
                 </section>
             </section>
         )

@@ -16,21 +16,14 @@
 
     &__left {
         display: flex;
-        width: 18%;
-        
-        @media (min-width: 768px) {
-            width: 9%;
-        }
+        width: auto;
+        margin-right: $padding*2;
     }
 
     &__right {
         display: flex;
         flex-wrap: wrap;
-        width: 80%;
-
-        @media (min-width: 768px) {
-            width: 91%;
-        }
+        width: 100%;
     }
 
     &__name {

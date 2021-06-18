@@ -13,6 +13,7 @@ class MainPage extends Component {
     state = {
         videos: [],
         selectedVideo: null,
+        selectedVideoId: null,
     }
 
     getVideos = () => {
@@ -20,6 +21,7 @@ class MainPage extends Component {
             .then(res => {
                 this.setState({
                     videos: res.data,
+                    selectedVideoId: res.data[0].id
                 })
             })
             .catch(err => {
@@ -31,7 +33,8 @@ class MainPage extends Component {
         axios.get(`${API_URL}/videos/${videoId}?api_key=${API_KEY}`)
             .then(res => {
                 this.setState({
-                    selectedVideo: res.data
+                    selectedVideo: res.data,
+                    selectedVideoId: res.data.id
                 })
             })
             .catch(err => {
@@ -41,34 +44,27 @@ class MainPage extends Component {
 
     componentDidMount() {
         this.getVideos();
-
-        const { videoId } = this.props.match.params;
-
-        if (!!videoId) {
-            this.getVideoDetails(videoId);
-        } else {
-            this.getVideoDetails(this.state.videos[0])
-        }
-        console.log(!!videoId);
-        console.log(this.state);
-        // let selectedVideoId;
-        // !!videoId ? selectedVideoId = videoId : selectedVideoId = this.state.videos[0];
-        // let videoId;
-        // !!defaultVideoId ? videoId = defaultVideoId : videoId = match.params.videoId;
-        // const selectedVideo = videoDetails.find(video => video.id === videoId);
-        
     }
 
     componentDidUpdate(prevProps) {
-        const { videoId } = this.props.match.params;
+        // Solution A - Is jumping and keeps running on both Pages
+        // const { videoId } = this.props.match.params;
 
-        if (videoId !== prevProps.match.params.videoId) {
+        // let myVideoId;
+        // !!videoId ? myVideoId = videoId : myVideoId = this.state.videos[0].id;
+
+        // this.getVideoDetails(myVideoId);
+
+        // console.log(myVideoId);
+
+        // Solution B - Keeps running when on the Home Page: watch the console.log(this.state.selectedVideoId);
+        const videoId = this.props.match.params.videoId || this.state.videos[0].id;
+
+        if (videoId !== prevProps.match.params.videoId || videoId !== this.state.selectedVideoId) {
+            console.log(this.state.selectedVideoId);
             this.getVideoDetails(videoId);
-        }
-
+        }       
     }
-
-    // const selectedVideo = videoDetails.find(video => video.id === videoId);
     
     render() {
         const { videos, selectedVideo } = this.state;

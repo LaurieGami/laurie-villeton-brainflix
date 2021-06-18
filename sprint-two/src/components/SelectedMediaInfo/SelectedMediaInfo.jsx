@@ -73,7 +73,7 @@ function SelectedMediaInfo ({selectedEntry}) {
                 </p>
             </section>
             <section className="selected-media__comments">
-                <Comments comments={selectedEntry.comments}/>
+                <Comments selectedEntry={selectedEntry}/>
             </section>
         </article>
     )
