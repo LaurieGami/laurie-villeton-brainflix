@@ -47,7 +47,7 @@ const timestampToDate = (timestamp) => {
     return date = mm+'/'+dd+'/'+yyyy;
 }
 
-function SelectedMediaInfo ({selectedEntry}) {
+function SelectedMediaInfo ({selectedEntry, getVideoDetails}) {
     return (
         <article className="selected-media">
             <section className="selected-media__info">
@@ -73,7 +73,7 @@ function SelectedMediaInfo ({selectedEntry}) {
                 </p>
             </section>
             <section className="selected-media__comments">
-                <Comments selectedEntry={selectedEntry}/>
+                <Comments selectedEntry={selectedEntry} getVideoDetails={getVideoDetails}/>
             </section>
         </article>
     )

@@ -2,8 +2,7 @@ import './MainPage.scss';
 
 import { Component } from 'react';
 import axios from 'axios';
-import { API_URL } from '../../utils/utils';
-import { API_KEY } from '../../utils/utils';
+import { API_URL, API_KEY } from '../../utils/utils';
 
 import Hero from '../../components/Hero/Hero';
 import SelectedMediaInfo from '../../components/SelectedMediaInfo/SelectedMediaInfo';
@@ -61,7 +60,7 @@ class MainPage extends Component {
         const videoId = this.props.match.params.videoId || this.state.videos[0].id;
 
         if (videoId !== prevProps.match.params.videoId || videoId !== this.state.selectedVideoId) {
-            console.log(this.state.selectedVideoId);
+            // console.log(this.state.selectedVideoId);
             this.getVideoDetails(videoId);
         }       
     }
@@ -77,7 +76,7 @@ class MainPage extends Component {
             <main className="main">
                 <Hero selectedEntry={selectedVideo} />
                 <section className="main__container">
-                    <SelectedMediaInfo selectedEntry={selectedVideo} />
+                    <SelectedMediaInfo selectedEntry={selectedVideo} getVideoDetails={this.getVideoDetails}/>
                     <MediaList entries={videos.filter(video => video.id !== selectedVideo.id)} />
                 </section>
             </main>

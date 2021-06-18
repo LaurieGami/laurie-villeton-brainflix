@@ -1,5 +1,9 @@
 import './CommentItems.scss';
-// import Avatar from '../Avatar/Avatar';
+import Avatar from '../Avatar/Avatar';
+import { Component } from 'react';
+import axios from 'axios';
+
+import { API_URL, API_KEY } from '../../utils/utils';
 
 // Calculate how long ago was the comment posted
 const timeAgo = (timestamp) => {
@@ -45,29 +49,47 @@ const timestampToDate = (timestamp) => {
     return date = mm+'/'+dd+'/'+yyyy;
 }
 
-function CommentItems ({comments}) {
-    return (
-        <>
-        {comments.map(comment => {
-            return (
-                <article className="comment" key={comment.id}>
-                    <div className="comment__left">
-                        {/* Insert Avatar Component instead of code below for next sprint */}
-                        <div className="avatar-container">
-                            {/* <img src={avatar} className="avatar" alt="Avatar"/> */}
-                        </div>
-                    </div>
-                    <div className="comment__right">
-                        <h3 className="comment__name">{comment.name}</h3>
-                        <p className="comment__timestamp">{timeAgo(comment.timestamp)}</p>
-                        <p className="comment__text">{comment.comment}</p>
-                    </div>
-                </article>    
-            )
-        })}
-        </>
-    )
+class CommentItems extends Component {
 
+    handleClick = (commentId) => {
+        axios.delete(`${API_URL}/videos/${this.props.selectedEntry.id}/comments/${commentId}?api_key=${API_KEY}`)
+        .then(res => {
+            console.log(res);
+            this.props.getVideoDetails(this.props.selectedEntry.id);
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+    
+    render() {
+        const { comments } = this.props.selectedEntry;
+        return (
+            <>
+            {comments
+            .sort((a, b) => {
+            return b.timestamp - a.timestamp;
+            })
+            .map(comment => {
+                return (
+                    <article className="comment" key={comment.id}>
+                        <div className="comment__left">
+                            {comment.name === "Laurie Villeton" ? (<Avatar />) : (
+                                <div className="avatar-container"></div>
+                            )}
+                        </div>
+                        <div className="comment__right">
+                            <h3 className="comment__name">{comment.name}</h3>
+                            <p className="comment__timestamp">{timeAgo(comment.timestamp)}</p>
+                            <p className="comment__text">{comment.comment}</p>
+                        </div>
+                        <button onClick={() => this.handleClick(comment.id)}>Delete</button>
+                    </article>    
+                )
+            })}
+            </>
+        )
+    }
 }
 
 export default CommentItems;
