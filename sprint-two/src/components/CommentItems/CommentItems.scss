@@ -22,21 +22,42 @@
 
     &__right {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
         width: 100%;
+
+        @media (min-width: 768px) {
+            margin-right: $padding*5;
+        }
+
+        &-top {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: $padding;
+
+            @media (min-width: 768px) {
+                justify-content: flex-start;
+            }
+        }
+
+        &-bottom {
+            display: flex;
+            padding-bottom: $padding;
+        }
+
+        &-buttons {
+            display: flex;
+            justify-content: flex-end;
+        }
     }
 
     &__name {
         @include paragraph-mobile;
         font-weight: 600;
         display: flex;
-        width: 60%;
-        padding-bottom: $padding;
 
         @media (min-width: 768px) {
             @include list-desktop;
             font-weight: 600;
-            width: auto;
             margin-right: $padding*2;
         }
     }
@@ -45,13 +66,10 @@
         @include paragraph-mobile;
         color: colors.$secondary-silver;
         display: flex;
-        justify-content: flex-end;
-        width: 40%;
-        padding-bottom: $padding;
 
         @media (min-width: 768px) {
             @include list-desktop;
-            width: auto;
+            // width: auto;
         }
     }
 
@@ -62,7 +80,11 @@
 
         @media (min-width: 768px) {
             @include paragraph-desktop;
-            margin-right: $padding*5;
+            // margin-right: $padding*5;
         }
+    }
+
+    &__like-btn {
+        cursor: pointer;
     }
 }

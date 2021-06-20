@@ -2,7 +2,7 @@ import './MainPage.scss';
 
 import { Component } from 'react';
 import axios from 'axios';
-import { API_URL, API_KEY } from '../../utils/utils';
+import { API_URL, API_KEY } from '../../utils/api';
 
 import Hero from '../../components/Hero/Hero';
 import SelectedMediaInfo from '../../components/SelectedMediaInfo/SelectedMediaInfo';

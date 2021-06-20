@@ -4,7 +4,7 @@ import Avatar from "../Avatar/Avatar";
 import { Component } from 'react';
 import axios from 'axios';
 
-import { API_URL, API_KEY } from '../../utils/utils';
+import { API_URL, API_KEY } from '../../utils/api';
 
 class CommentForm extends Component {
     state = {
@@ -12,14 +12,17 @@ class CommentForm extends Component {
         comment: "",
     }
 
+    // Makes a copy of the initial state to reset the form once submitted
     initialState = this.state;
 
+    // Updates the state as we type in text in the comment input form
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
         })
     }
 
+    // Makes sure we have both a name and a comment in  the form to submit to the API
     isFormValid = () => {
         if (!this.state.name || !this.state.comment) {
             return false;
@@ -27,6 +30,7 @@ class CommentForm extends Component {
         return true;
     }
 
+    // Submits the new comment to the API and displays it on the page
     handleSubmit = (event) => {
         event.preventDefault();
         if (this.isFormValid()) {
@@ -35,12 +39,11 @@ class CommentForm extends Component {
                 comment: this.state.comment
             })
             .then(res => {
-                console.log(res);
                 this.props.getVideoDetails(this.props.selectedEntry.id);
                 this.setState(this.initialState);
             })
             .catch(err => {
-                console.log(err);
+                alert("Oops! Something happened: ", err);
             })
         } else {
             alert("Please write a comment");

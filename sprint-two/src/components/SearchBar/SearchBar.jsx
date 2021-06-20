@@ -4,6 +4,7 @@ import searchIcon from '../../assets/icons/Icon-search.svg';
 
 class SearchBar extends Component {
 
+    // Prevents the search bar from working when pressing "Enter"
     handleSearch = (event) => {
         if(event.keyCode === 13) {
             event.preventDefault();
