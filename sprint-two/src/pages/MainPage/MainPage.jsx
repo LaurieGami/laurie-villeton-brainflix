@@ -15,6 +15,7 @@ class MainPage extends Component {
         selectedVideoId: null,
     }
 
+    // Gets the basic info for all the videos
     getVideos = () => {
         axios.get(`${API_URL}/videos?api_key=${API_KEY}`)
             .then(res => {
@@ -28,6 +29,7 @@ class MainPage extends Component {
             })
     }
 
+    // Gets the detailed info for a specific video via its id
     getVideoDetails = (videoId) => {
         axios.get(`${API_URL}/videos/${videoId}?api_key=${API_KEY}`)
             .then(res => {
