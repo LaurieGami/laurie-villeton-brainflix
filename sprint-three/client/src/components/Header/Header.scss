@@ -1,0 +1,90 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+
+.header {
+    width: 100%;
+    padding: $padding*2;
+    display: flex;
+    flex-direction: column;
+    border-bottom: $divider;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: $padding*2 $padding*3;
+    }
+
+    @media (min-width: 1280px) {
+        width: 1080px;
+        padding: $padding*2 0;
+    }
+
+    &__logo {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: $padding*2;
+
+        @media (min-width: 768px) {
+            width: 20%;
+            justify-content: flex-start;
+            padding-bottom: 0;
+        }
+
+        &-link {
+            display: flex;
+        }
+    }
+
+    &__content {
+        @include list-style-reset;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media (min-width: 768px) {
+            width: 80%;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+        }
+    }
+
+    &__search {
+        display: flex;
+        width: 100%;
+        margin-bottom: $padding;
+
+        @media (min-width: 768px) {
+            width: 250px;
+            margin-bottom: 0;
+            margin-right: $padding*3;
+        }
+    }
+
+    &__upload {
+        display: flex;
+        width: 80%;
+
+        @media (min-width: 768px) {
+            width: 100px;
+            margin-right: $padding*3;
+        }
+        
+        &-link {
+            width: 100%;
+            text-decoration: none;
+        }
+    }
+
+    &__avatar {
+        display: flex;
+        justify-content: flex-end;
+        width: 20%;
+
+        @media (min-width: 768px) {
+            width: auto;
+        }
+    }
+}

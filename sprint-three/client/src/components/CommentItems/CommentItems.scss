@@ -1,0 +1,90 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors';
+
+/* =============== Comment Item =============== */
+.comment {
+    border-bottom: $divider;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: $padding*3 0;
+
+    @media (min-width: 768px) {
+        padding: $padding*3 0;
+    }
+
+    &__left {
+        display: flex;
+        width: auto;
+        margin-right: $padding*2;
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        @media (min-width: 768px) {
+            margin-right: $padding*5;
+        }
+
+        &-top {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: $padding;
+
+            @media (min-width: 768px) {
+                justify-content: flex-start;
+            }
+        }
+
+        &-bottom {
+            display: flex;
+            padding-bottom: $padding;
+        }
+
+        &-buttons {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    &__name {
+        @include paragraph-mobile;
+        font-weight: 600;
+        display: flex;
+
+        @media (min-width: 768px) {
+            @include list-desktop;
+            font-weight: 600;
+            margin-right: $padding*2;
+        }
+    }
+
+    &__timestamp {
+        @include paragraph-mobile;
+        color: colors.$secondary-silver;
+        display: flex;
+
+        @media (min-width: 768px) {
+            @include list-desktop;
+            // width: auto;
+        }
+    }
+
+    &__text {
+        @include paragraph-mobile;
+        display: flex;
+        width: 100%;
+
+        @media (min-width: 768px) {
+            @include paragraph-desktop;
+            // margin-right: $padding*5;
+        }
+    }
+
+    &__like-btn {
+        cursor: pointer;
+    }
+}

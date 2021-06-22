@@ -1,0 +1,19 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.upload-btn {
+    @include button-mobile;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+        @include button-hover;
+    }
+
+    &__icon {
+        padding-right: $padding;
+    }
+}

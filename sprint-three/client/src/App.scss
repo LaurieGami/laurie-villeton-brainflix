@@ -1,0 +1,14 @@
+@use './styles/partials/colors';
+@use './styles/partials/variables' as *;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: $font-family;
+    color: colors.$primary-black;
+}

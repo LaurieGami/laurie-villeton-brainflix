@@ -1,0 +1,121 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors';
+
+.selected-media {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+
+    @media (min-width: 1280px) {
+        width: 66%;
+        border-right: $divider;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        padding: $padding*2;
+
+        @media (min-width: 768px) {
+            padding: $padding*3;
+        }
+
+        @media (min-width: 1280px) {
+            padding: $padding*2 0 $padding*3 0;
+
+        }
+    }
+
+    &__title {
+        @include header-mobile;
+        margin: $padding*2 0;
+
+        @media (min-width: 768px) {
+            @include h1-header-desktop;
+            margin: $padding*3 0;
+        }
+    }
+
+    &__subtitles {
+        display: flex;
+        flex-direction: column;
+        border-bottom: $divider;
+        padding-bottom: $padding*3;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__top {
+        display: flex;
+        align-items: baseline;
+        padding-bottom: $padding*3;
+
+        @media (min-width: 768px) {
+            padding-bottom: 0;
+        }
+    }
+
+    &__channel {
+        @include subheader-mobile;
+        margin-right: $padding;
+
+        @media (min-width: 768px) {
+            @include subheader-desktop;
+        }
+    }
+
+    &__timestamp {
+        @include paragraph-mobile;
+        color: colors.$secondary-silver;
+
+        @media (min-width: 768px) {
+            @include paragraph-desktop;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+    }
+
+    &__stats {
+        display: flex;
+        align-items: center;
+        margin-right: $padding*3;
+
+        @media (min-width: 1280px) {
+            margin-right: $padding*5;
+        }
+    }
+
+    &__icon {
+        margin-right: $padding;
+    }
+
+    &__number {
+        @include paragraph-mobile;
+
+        @media (min-width: 768px) {
+            @include paragraph-desktop;
+        }
+    }
+
+    &__description {
+        @include paragraph-mobile;
+        width: 100%;
+        margin-top: $padding*3;
+
+        @media (min-width: 768px) {
+            @include paragraph-desktop;
+            width: 73%;
+            margin-top: $padding*5;
+        }
+    }
+
+    &__comments {
+        width: 100%;
+    }
+}

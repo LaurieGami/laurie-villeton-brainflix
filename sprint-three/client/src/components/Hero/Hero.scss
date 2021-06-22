@@ -1,0 +1,32 @@
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/colors';
+
+.hero {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__video {
+        max-width: 100%;
+        height: auto;
+        max-height: 230px; // temporary for Sprint 1 so this doesn't change to portrait mode
+
+        @media (min-width: 768px) {
+            max-width: 700px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 1280px) {
+            max-width: 944px;
+            max-height: 540px;
+        }
+
+        &-source {
+            max-height: 183px;
+        }
+    }
+}
