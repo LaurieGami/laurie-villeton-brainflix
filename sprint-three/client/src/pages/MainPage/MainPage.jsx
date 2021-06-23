@@ -2,7 +2,6 @@ import './MainPage.scss';
 
 import { Component } from 'react';
 import axios from 'axios';
-import { API_URL, API_KEY } from '../../utils/api';
 
 import Hero from '../../components/Hero/Hero';
 import SelectedMediaInfo from '../../components/SelectedMediaInfo/SelectedMediaInfo';
@@ -17,7 +16,7 @@ class MainPage extends Component {
 
     // Gets the basic info for all the videos
     getVideos = () => {
-        axios.get(`http://localhost:8080/videos`)
+        axios.get(`/videos`)
             .then(res => {
                 this.setState({
                     videos: res.data,
@@ -31,7 +30,7 @@ class MainPage extends Component {
 
     // Gets the detailed info for a specific video via its id
     getVideoDetails = (videoId) => {
-        axios.get(`http://localhost:8080/videos/${videoId}`)
+        axios.get(`/videos/${videoId}`)
             .then(res => {
                 this.setState({
                     selectedVideo: res.data,

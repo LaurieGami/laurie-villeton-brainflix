@@ -1,7 +1,6 @@
 import './VideoUploadPage.scss';
 import { Link } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
-import thumbnail from '../../assets/images/Upload-video-preview.jpg';
 
 import { Component } from 'react';
 import axios from 'axios';
@@ -43,11 +42,11 @@ class VideoUploadPage extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         if (this.isFormValid()) {
-            axios.post(`http://localhost:8080/videos`, {
+            axios.post(`/videos`, {
                 id: uuid(),
                 title: this.state.title,
                 channel: "Laurie Villeton",
-                image: "",
+                image: "/images//Upload-video-preview.jpg",
                 description: this.state.description,
                 views: "0",
                 likes: "0",
@@ -57,7 +56,8 @@ class VideoUploadPage extends Component {
                 comments: [],
             })
             .then(res => {
-                console.log(res);
+                alert(`Video "${res.data.title}" has been submitted`);
+                this.setState(this.initialState);
             })
             .catch(err => alert("Oops! Something happened: ", err))
         } else {
@@ -75,7 +75,7 @@ class VideoUploadPage extends Component {
                             <label htmlFor="videoThumbnail" className="upload-form__label">Video thumbnail</label>
                             {/* img and div to be replaced by a file input tag */}
                             <div className="upload-form__input-img-container">
-                                <img src={thumbnail} className="upload-form__input-img" alt="Video Upload Thumbnail" />
+                                <img src="/images/Upload-video-preview.jpg" className="upload-form__input-img" alt="Video Upload Thumbnail" />
                             </div>
                         </div>
                         <div className="upload-form__info">
