@@ -8,7 +8,7 @@ import { API_URL, API_KEY } from '../../utils/api';
 
 class CommentForm extends Component {
     state = {
-        name: "Laurie Villeton",
+        name: "",
         comment: "",
     }
 
@@ -24,7 +24,7 @@ class CommentForm extends Component {
 
     // Makes sure we have both a name and a comment in  the form to submit to the API
     isFormValid = () => {
-        if (!this.state.name || !this.state.comment) {
+        if (!this.state.comment) {
             return false;
         }
         return true;
@@ -35,7 +35,7 @@ class CommentForm extends Component {
         event.preventDefault();
         if (this.isFormValid()) {
             axios.post(`${API_URL}/videos/${this.props.selectedEntry.id}/comments?api_key=${API_KEY}`, {
-                name: this.state.name,
+                name: "Laurie Villeton",
                 comment: this.state.comment
             })
             .then(res => {

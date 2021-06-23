@@ -20,7 +20,10 @@ router.get('/:id', (req, res) => {
 
 // Needs some work
 router.post('', (req, res) => {
-    res.json('This is a post request for videos');
+    req.body.image = "http://localhost:8080/images/Upload-video-preview.jpg";
+    const video = req.body;
+    videos.push(video);
+    res.status(200).json(video);
 })
 
 module.exports = router;

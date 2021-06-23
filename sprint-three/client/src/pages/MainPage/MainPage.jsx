@@ -17,7 +17,7 @@ class MainPage extends Component {
 
     // Gets the basic info for all the videos
     getVideos = () => {
-        axios.get(`${API_URL}/videos?api_key=${API_KEY}`)
+        axios.get(`http://localhost:8080/videos`)
             .then(res => {
                 this.setState({
                     videos: res.data,
@@ -31,7 +31,7 @@ class MainPage extends Component {
 
     // Gets the detailed info for a specific video via its id
     getVideoDetails = (videoId) => {
-        axios.get(`${API_URL}/videos/${videoId}?api_key=${API_KEY}`)
+        axios.get(`http://localhost:8080/videos/${videoId}`)
             .then(res => {
                 this.setState({
                     selectedVideo: res.data,
