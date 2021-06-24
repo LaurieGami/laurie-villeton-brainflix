@@ -12,8 +12,8 @@ const App = () => {
         <Header />
         <Switch>
           <Route exact path="/" component={MainPage} />
-          <Route exact path="/videos/:videoId" component={MainPage} />
-          <Route exact path="/videoupload" component={VideoUploadPage} />
+          <Route path="/videos/:videoId" component={MainPage} />
+          <Route path="/videoupload" component={VideoUploadPage} />
         </Switch>
       </BrowserRouter>
     );

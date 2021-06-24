@@ -10,24 +10,26 @@ import Avatar from '../Avatar/Avatar';
 function Header() {
     return (
         <nav className="header">
-            <section className="header__logo">
-                <Link to="/" className="header__logo-link">
-                    <img className="header__logo-img" src={logo} alt="BrainFlix Logo"/>
-                </Link>
-            </section>
-            <ul className="header__content">
-                <li className="header__search">
-                    <SearchBar />
-                </li>
-                <li className="header__upload">
-                    <Link to="/videoupload" className="header__upload-link">
-                        <UploadBtn />
+            <div className="header-container">
+                <section className="header__logo">
+                    <Link to="/" className="header__logo-link">
+                        <img className="header__logo-img" src={logo} alt="BrainFlix Logo"/>
                     </Link>
-                </li>
-                <li className="header__avatar">
-                    <Avatar />
-                </li>
-            </ul>
+                </section>
+                <ul className="header__content">
+                    <li className="header__search">
+                        <SearchBar />
+                    </li>
+                    <li className="header__upload">
+                        <Link to="/videoupload" className="header__upload-link">
+                            <UploadBtn />
+                        </Link>
+                    </li>
+                    <li className="header__avatar">
+                        <Avatar />
+                    </li>
+                </ul>
+            </div>
         </nav>
 
     )

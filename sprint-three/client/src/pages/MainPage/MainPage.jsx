@@ -50,7 +50,7 @@ class MainPage extends Component {
         const videoId = this.props.match.params.videoId || this.state.videos[0].id;
 
         if (prevState.selectedVideoId !== videoId) {
-            return this.getVideoDetails(videoId);
+            this.getVideoDetails(videoId);
         }
     }
     

@@ -1,9 +1,9 @@
 import './VideoUploadPage.scss';
 import { Link } from 'react-router-dom';
-import { v4 as uuid } from 'uuid';
 
 import { Component } from 'react';
 import axios from 'axios';
+import { v4 as uuid } from 'uuid';
 
 class VideoUploadPage extends Component {
     state = {
@@ -56,8 +56,11 @@ class VideoUploadPage extends Component {
                 comments: [],
             })
             .then(res => {
-                alert(`Video "${res.data.title}" has been submitted`);
-                this.setState(this.initialState);
+                alert(`"${res.data.title}" video upload was successful`);
+                // this.setState(this.initialState);
+
+                // Redirects to home page after new video has been submitted
+                this.props.history.push("/");
             })
             .catch(err => alert("Oops! Something happened: ", err))
         } else {

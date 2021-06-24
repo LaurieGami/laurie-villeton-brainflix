@@ -3,20 +3,26 @@
 
 .header {
     width: 100%;
-    padding: $padding*2;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     border-bottom: $divider;
+    
+    &-container {
+        width: 100%;
+        padding: $padding*2;
+        display: flex;
+        flex-direction: column;
 
-    @media (min-width: 768px) {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: $padding*2 $padding*3;
-    }
+        @media (min-width: 768px) {
+            flex-direction: row;
+            justify-content: space-between;
+            padding: $padding*2 $padding*3;
+        }
 
-    @media (min-width: 1280px) {
-        width: 1080px;
-        padding: $padding*2 0;
+        @media (min-width: 1280px) {
+            width: 1080px;
+            padding: $padding*2 0;
+        }
     }
 
     &__logo {

@@ -1,8 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-const videos = require('../data/videos.json');
-const fs = require("fs");
+const commentRoutes = require('./comments');
+router.use('/', commentRoutes);
+
+let videos = require('../data/videos.json');
+
+const fs = require('fs');
+const path = require('path');
+// let data = fs.readFile('../data/videos.json');
+// let videos = JSON.parse(data);
 
 // GET /videos end-point that responds with an array of videos
 router.get('/', (_req, res) => {
@@ -26,6 +33,8 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     const video = req.body;
     videos.push(video);
+    // Writes a new videos.json file with the new video included
+    fs.writeFile(path.join(__dirname,'../data','videos.json'), JSON.stringify(videos, null, 2));
     res.status(200).json(video);
 })
 

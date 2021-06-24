@@ -3,13 +3,15 @@ import Avatar from "../Avatar/Avatar";
 
 import { Component } from 'react';
 import axios from 'axios';
-
-import { API_URL, API_KEY } from '../../utils/api';
+import { v4 as uuid } from 'uuid';
 
 class CommentForm extends Component {
     state = {
         name: "",
         comment: "",
+        id: "",
+        likes: "",
+        timestamp: "",
     }
 
     // Makes a copy of the initial state to reset the form once submitted
@@ -34,9 +36,12 @@ class CommentForm extends Component {
     handleSubmit = (event) => {
         event.preventDefault();
         if (this.isFormValid()) {
-            axios.post(`${API_URL}/videos/${this.props.selectedEntry.id}/comments?api_key=${API_KEY}`, {
+            axios.post(`/videos/${this.props.selectedEntry.id}/comments`, {
                 name: "Laurie Villeton",
-                comment: this.state.comment
+                comment: this.state.comment,
+                id: uuid(),
+                likes: 0,
+                timestamp: Date.now(),
             })
             .then(res => {
                 this.props.getVideoDetails(this.props.selectedEntry.id);

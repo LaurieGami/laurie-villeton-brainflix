@@ -4,7 +4,6 @@ const app = express();
 const cors = require('cors');
 
 const videoRoutes = require('./routes/videos');
-const commentRoutes = require('./routes/comments');
 
 //Middleware to allow express to serve Static files
 app.use(express.static('public'));
@@ -16,7 +15,6 @@ app.use(express.json());
 app.use(cors());
 
 app.use('/videos', videoRoutes);
-app.use('/comments', commentRoutes);
 
 app.listen(8080, () => {
     console.log('Server is listening on port 8080');
