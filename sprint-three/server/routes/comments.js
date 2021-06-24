@@ -24,8 +24,9 @@ router.delete(`/:videoId/comments/:commentId`, (req, res) => {
     const videoComments = video.comments;
     const commentIndex = videoComments.findIndex(comment => comment.id === commentId);
     const comment = videoComments[commentIndex];
-    res.status(200).json(comment);
     videoComments.splice(commentIndex, 1);
+    fs.writeFile(path.join(__dirname,'../data','videos.json'), JSON.stringify(videos, null, 2), () => {console.log("File updated!")});
+    res.status(200).json(comment);
 })
 
 module.exports = router;
