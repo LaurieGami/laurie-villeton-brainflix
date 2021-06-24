@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
     const video = req.body;
     videos.push(video);
     // Writes a new videos.json file with the new video included
-    fs.writeFile(path.join(__dirname,'../data','videos.json'), JSON.stringify(videos, null, 2));
+    fs.writeFile(path.join(__dirname,'../data','videos.json'), JSON.stringify(videos, null, 2), () => {console.log("File updated!")});
     res.status(200).json(video);
 })
 

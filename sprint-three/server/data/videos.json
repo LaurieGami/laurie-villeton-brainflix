@@ -326,5 +326,33 @@
     "video": "https://project-2-api.herokuapp.com/stream",
     "timestamp": 1624509694597,
     "comments": []
+  },
+  {
+    "id": "19abe13a-79ea-49d5-9f0e-851fe7cbff8c",
+    "title": "June 24",
+    "channel": "Laurie Villeton",
+    "image": "/images//Upload-video-preview.jpg",
+    "description": "abc",
+    "views": "0",
+    "likes": "0",
+    "duration": "4:01",
+    "video": "https://project-2-api.herokuapp.com/stream",
+    "timestamp": 1624545426048,
+    "comments": [
+      {
+        "name": "Laurie Villeton",
+        "comment": "lol",
+        "id": "973014ec-666b-4032-9750-8614c4f7cf58",
+        "likes": 0,
+        "timestamp": 1624545578031
+      },
+      {
+        "name": "Laurie Villeton",
+        "comment": "another comment",
+        "id": "34e3d17b-dd04-4732-8a4f-c28ae65ae593",
+        "likes": 0,
+        "timestamp": 1624545619752
+      }
+    ]
   }
 ]

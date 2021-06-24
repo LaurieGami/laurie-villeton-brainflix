@@ -3,6 +3,9 @@ const router = express.Router();
 
 let videos = require('../data/videos.json');
 
+const fs = require('fs');
+const path = require('path');
+
 // POST /videos/:id/comments for creating a new comment
 router.post('/:id/comments', (req, res) => {
     const videoId = req.params.id;
@@ -10,6 +13,7 @@ router.post('/:id/comments', (req, res) => {
     const videoComments = video.comments;
     const comment = req.body;
     videoComments.push(comment);
+    fs.writeFile(path.join(__dirname,'../data','videos.json'), JSON.stringify(videos, null, 2), () => {console.log("File updated!")});
     res.status(200).json(comment);
 })
 
