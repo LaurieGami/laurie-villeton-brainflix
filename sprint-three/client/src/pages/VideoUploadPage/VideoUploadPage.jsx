@@ -43,7 +43,7 @@ class VideoUploadPage extends Component {
                 id: uuid(),
                 title: this.state.title,
                 channel: "Laurie Villeton",
-                image: "/images//Upload-video-preview.jpg",
+                image: "/images/Upload-video-preview.jpg",
                 description: this.state.description,
                 views: "0",
                 likes: "0",

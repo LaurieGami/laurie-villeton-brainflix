@@ -6,7 +6,7 @@
     "image": "https://i.imgur.com/l2Xfgpl.jpg",
     "description": "On a gusty day in Southern Utah, a group of 25 daring mountain bikers blew the doors off what is possible on two wheels, unleashing some of the biggest moments the sport has ever seen. While mother nature only allowed for one full run before the conditions made it impossible to ride, that was all that was needed for event veteran Kyle Strait, who won the event for the second time -- eight years after his first Red Cow Rampage title",
     "views": "1,001,023",
-    "likes": "110,990",
+    "likes": "110,992",
     "duration": "4:01",
     "video": "https://project-2-api.herokuapp.com/stream",
     "timestamp": 1545162149000,
@@ -76,7 +76,7 @@
     "image": "https://i.imgur.com/yFS8EBr.jpg",
     "description": "Les Houches, located 6 kilometres from Chamonix, is a ski resort with a domain which extends from an altitude of 950 metres up to 1900 metres. Long descents through tree-lined slopes are combined with impressive views of the Mont Blanc massif and the Chamonix valley. Les Houches is twinned with the Russian villages of Sochi and Krasnaya-Polyana and was chosen by the International Olympic Committee to assist in the organization of the 2014 Winter Olympic Games. Watch for more fun facts!",
     "views": "16,950",
-    "likes": "3,857",
+    "likes": "3,858",
     "duration": "4:13",
     "video": "https://project-2-api.herokuapp.com/stream",
     "timestamp": 1534234842000,
@@ -315,16 +315,16 @@
     ]
   },
   {
-    "id": "67528d33-23cb-42ea-830e-b1608d11057b",
+    "id": "e2bf7709-93c2-47e8-ab0d-18d5c709cdba",
     "title": "BrainFlix Sprint III",
     "channel": "Laurie Villeton",
-    "image": "/images//Upload-video-preview.jpg",
-    "description": "This was fun!",
+    "image": "/images/Upload-video-preview.jpg",
+    "description": "It was fun!",
     "views": "0",
-    "likes": "60",
+    "likes": "10",
     "duration": "4:01",
     "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1624580519570,
+    "timestamp": 1624657694260,
     "comments": []
   }
 ]
