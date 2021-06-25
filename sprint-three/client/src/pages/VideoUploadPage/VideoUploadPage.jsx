@@ -20,9 +20,6 @@ class VideoUploadPage extends Component {
         comments: [],
     }
 
-    // Makes a copy of the initial state to reset the form once submitted
-    initialState = this.state;
-
     // Updates the state as we type in text in the video input form
     handleChange = event => {
         this.setState({
@@ -57,7 +54,6 @@ class VideoUploadPage extends Component {
             })
             .then(res => {
                 alert(`"${res.data.title}" video upload was successful`);
-                // this.setState(this.initialState);
 
                 // Redirects to home page after new video has been submitted
                 this.props.history.push("/");

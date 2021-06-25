@@ -315,37 +315,16 @@
     ]
   },
   {
-    "id": "0c6675e5-54f1-4317-af06-a3b8ebe98893",
-    "title": "This is the one!",
+    "id": "67528d33-23cb-42ea-830e-b1608d11057b",
+    "title": "BrainFlix Sprint III",
     "channel": "Laurie Villeton",
     "image": "/images//Upload-video-preview.jpg",
-    "description": "I hope so!",
+    "description": "This was fun!",
     "views": "0",
     "likes": "0",
     "duration": "4:01",
     "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1624509694597,
+    "timestamp": 1624580519570,
     "comments": []
-  },
-  {
-    "id": "19abe13a-79ea-49d5-9f0e-851fe7cbff8c",
-    "title": "June 24",
-    "channel": "Laurie Villeton",
-    "image": "/images//Upload-video-preview.jpg",
-    "description": "abc",
-    "views": "0",
-    "likes": "0",
-    "duration": "4:01",
-    "video": "https://project-2-api.herokuapp.com/stream",
-    "timestamp": 1624545426048,
-    "comments": [
-      {
-        "name": "Laurie Villeton",
-        "comment": "another comment",
-        "id": "34e3d17b-dd04-4732-8a4f-c28ae65ae593",
-        "likes": 0,
-        "timestamp": 1624545619752
-      }
-    ]
   }
 ]

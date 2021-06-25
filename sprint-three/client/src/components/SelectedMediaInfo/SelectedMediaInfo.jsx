@@ -1,5 +1,8 @@
 import './SelectedMediaInfo.scss';
 
+import { Component } from 'react';
+import axios from 'axios';
+
 import viewsIcon from '../../assets/icons/Icon-views.svg';
 import likesIcon from '../../assets/icons/Icon-likes.svg';
 
