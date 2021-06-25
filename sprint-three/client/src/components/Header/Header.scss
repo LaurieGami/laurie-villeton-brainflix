@@ -47,12 +47,11 @@
         @include list-style-reset;
         width: 100%;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
+        flex-direction: column;
 
         @media (min-width: 768px) {
             width: 80%;
-            flex-wrap: nowrap;
+            flex-direction: row;
             justify-content: flex-end;
         }
     }
@@ -69,13 +68,22 @@
         }
     }
 
+    &__buttons {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        @media (min-width: 768px) {
+            width: auto;
+        }
+    }
+
     &__upload {
         display: flex;
-        width: 80%;
+        width: 100%;
 
         @media (min-width: 768px) {
             width: 100px;
-            margin-right: $padding*3;
         }
         
         &-link {
@@ -86,11 +94,11 @@
 
     &__avatar {
         display: flex;
-        justify-content: flex-end;
-        width: 20%;
+        width: auto;
+        margin-left: $padding*2;
 
         @media (min-width: 768px) {
-            width: auto;
+            margin-left: $padding*3;
         }
     }
 }
