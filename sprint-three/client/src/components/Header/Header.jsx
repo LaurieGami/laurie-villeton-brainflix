@@ -16,19 +16,21 @@ function Header() {
                         <img className="header__logo-img" src={logo} alt="BrainFlix Logo"/>
                     </Link>
                 </section>
-                <ul className="header__content">
-                    <li className="header__search">
+                <section className="header__content">
+                    <div className="header__search">
                         <SearchBar />
-                    </li>
-                    <li className="header__upload">
-                        <Link to="/videoupload" className="header__upload-link">
-                            <UploadBtn />
-                        </Link>
-                    </li>
-                    <li className="header__avatar">
-                        <Avatar />
-                    </li>
-                </ul>
+                    </div>
+                    <div className="header__buttons">
+                        <div className="header__upload">
+                            <Link to="/videoupload" className="header__upload-link">
+                                <UploadBtn />
+                            </Link>
+                        </div>
+                        <div className="header__avatar">
+                            <Avatar />
+                        </div>
+                    </div>
+                </section>
             </div>
         </nav>
 

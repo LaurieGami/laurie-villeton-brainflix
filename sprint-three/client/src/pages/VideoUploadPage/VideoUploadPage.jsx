@@ -18,7 +18,7 @@ class VideoUploadPage extends Component {
         video: "",
         timestamp: "",
         comments: [],
-    }
+    }  
 
     // Updates the state as we type in text in the video input form
     handleChange = event => {
