@@ -93,6 +93,10 @@
 
     &__icon {
         margin-right: $padding;
+
+        &--like {
+            cursor: pointer;
+        }
     }
 
     &__number {
